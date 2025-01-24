@@ -27,8 +27,8 @@ after_bundle do
   apply File.join(File.dirname(__FILE__), 'database.rb')
   apply File.join(File.dirname(__FILE__), 'models.rb')
   apply File.join(File.dirname(__FILE__), 'partials.rb')
+  apply File.join(File.dirname(__FILE__), 'stimulus.rb')
   apply File.join(File.dirname(__FILE__), 'readme.rb')
-
 
   def modify_scaffold_files(name)
     name_plural = name.downcase.pluralize
