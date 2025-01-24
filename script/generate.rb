@@ -6,13 +6,22 @@ require 'net/http'
 require 'uri'
 require 'fileutils'
 
-print "Enter your app name (e.g. My Rails App): "
+CONFIG_FILE = File.join(__dir__, 'config', 'api_key.txt')
+File.write(CONFIG_FILE, '') unless File.exist?(CONFIG_FILE)
+should_use = nil
+
+print "App Name: "
 raw_app_name = $stdin.gets.strip
 safe_app_name = raw_app_name.gsub(/\s+/, '_').downcase
 
-print "Use AI helper? (y/n): "
+print "Use AI powers? (y/n): "
 scaffold_answer = $stdin.gets.strip.downcase
 use_scaffold = (scaffold_answer == 'y' || scaffold_answer == 'yes')
+
+# TODO: set invite code
+print "Set Invite Code: "
+invite_answer = $stdin.gets.strip.downcase
+use_invite = (invite_answer == 'y' || invite_answer == 'yes')
 
 def save_to_file(value, file)
   FileUtils.mkdir_p(File.dirname(file))
@@ -31,9 +40,7 @@ rescue
   nil
 end
 
-if use_scaffold
-  CONFIG_FILE = File.join(__dir__, 'config', 'api_key.txt')
-
+def run
   openai_api_key = ENV['ST_OPENAI_API'] || load_api_key
   if openai_api_key.nil? || openai_api_key.strip.empty?
     print "Enter your OpenAI API key: "
@@ -41,7 +48,7 @@ if use_scaffold
     save_api_key(openai_api_key)
     ENV['ST_OPENAI_API'] = openai_api_key
   else
-    puts "\nUsing existing OpenAI API key.\n"
+    puts "~ Using existing OpenAI API key.\n"
   end
 
   begin
@@ -49,7 +56,6 @@ if use_scaffold
     prompt = $stdin.gets.strip
 
     puts "\nProcessing build steps with OpenAI...\n"
-
     api_key = ENV['OPENAI_API_KEY'] || openai_api_key
     url = URI("https://api.openai.com/v1/chat/completions")
 
@@ -127,7 +133,7 @@ if use_scaffold
           "content": "#{prompt}"
         }
       ],
-    }.to_json
+      }.to_json
 
     begin
       response = http.request(request)
@@ -138,13 +144,13 @@ if use_scaffold
         content = JSON.parse(content)
 
         commands = content["scaffolding"].split(";")
-        puts "\nScaffolding:"
+        puts "\nScaffold:"
         commands.each_with_index do |command, index|
           puts "#{index + 1}. #{command.strip}"
         end
 
         models = content["models"]
-        puts "\nModels:"
+        puts "\nModel Changes:"
         models.each_with_index do |model, index|
           puts "#{index + 1}. #{model["name"].strip}"
         end
@@ -155,20 +161,17 @@ if use_scaffold
         should_change = ai_use == 'c'
 
         if should_change
-          # TODO: request changes (make into function)
+          run()
+          return
         end
 
         if should_use
-          SCAFFOLD_FILE = File.join(__dir__, 'config', 'scaffolding.txt')
-          save_to_file(content["scaffolding"], SCAFFOLD_FILE)
-
-          NAV_FILE = File.join(__dir__, 'config', 'navigation.txt')
-          save_to_file(content["navigation"], NAV_FILE)
+          save_to_file(content["scaffolding"], File.join(__dir__, 'config', 'scaffolding.txt'))
+          save_to_file(content["navigation"], File.join(__dir__, 'config', 'navigation.txt'))
 
           models.each_with_index do |model, index|
             puts "#{index + 1}. #{model["name"].strip}"
-            MODEL_FILE = File.join(__dir__, 'config', "#{model["name"].downcase.strip}-model.txt")
-            save_to_file(model["code"], MODEL_FILE)
+            save_to_file(model["code"], File.join(__dir__, 'config', "#{model["name"].downcase.strip}-model.txt"))
           end
         end
       else
@@ -183,10 +186,14 @@ if use_scaffold
   end
 end
 
+if use_scaffold
+  run()
+end
+
 ENV['ST_OPENAI_USE']        = should_use.to_s
 ENV['ST_APP_NAME']          = raw_app_name
 
-TEMPLATE_FILE = File.join(__dir__, 'template.rb')
+TEMPLATE_FILE = File.join(__dir__, 'build.rb')
 template = TEMPLATE_FILE
 cmd = "rails new #{safe_app_name} -m #{template}"
 cmd << " --database=postgresql"

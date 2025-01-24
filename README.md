@@ -1,18 +1,23 @@
 # SnailTrain.com
-> a Ruby on Rails 8 Framework generator with AI super powers.
+> a Ruby on Rails 8 Framework Generator with AI super powers.
 
-Scaffold out your next SaaS application quickly. Use the CLI to generate a Ruby on Rails app with our framework that includes base UI screens, features and you can add your OpenAI API key to enable the AI super powers.
+Use the CLI to generate a Ruby on Rails app with our framework that includes base UI screens, MVP invite code and you can add your OpenAI API key to enable the AI super powers.
 
 ## What are the super powers?
 
-When you are running the CLI you can use plain text to generate new scaffoldings. For example, you can say "I want a new model called 'User' with a 'name' and 'email' field" and it will generate the model and migrations for you and edit the appropriate files for extra fast startup.
+When you connect with OpenAI API key you can use model `gpt-4o-2024-08-06` to generate the starting scaffolding for your app and it will run the migrations for you.
+
+## What makes us different?
+
+We start all apps without anything fancy (like Stripe, etc) and we have a built-in `Invite Code` which you can set in the generator. This allows you to build your MVP, invite your audience with invite code to start validating your app idea!
 
 ## Requirements
+
 Make sure you have PostgreSQL and Ruby installed on your machine.
 
 ## Usage
 
-### Install with CLI:
+### Install with Command Line Interface (CLI)
 > (download the files and open terminal and cd into directory)
 ```cli
  ./generate.rb
@@ -20,10 +25,10 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 
 <img src="/images/cli.png" style="width: 600px">
 
-### Skip CLI:
+### Skip CLI & use base framework:
 ```cli
  rails new your_app_name \
-  -m https://raw.githubusercontent.com/aFightClub/SnailTrain/main/script/template.rb \
+  -m https://raw.githubusercontent.com/aFightClub/SnailTrain/main/script/build.rb \
   --database=postgresql
 ```
 
