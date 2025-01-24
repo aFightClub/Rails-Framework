@@ -23,7 +23,7 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 
 Run in the terminal to generate a new Rails 8 application based on this framework.
 
-## What it does?
+## What is it, again?
 
 It will setup the dashboard, authentication with an account view and registration view. Uses TailwindCSS for styling and has a simple layout. Go from nothing to soemthing as fast as possible. The auth / application have two seperate layouts. There is an `application` folder for share partials for header, footer, etc.
 
