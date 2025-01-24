@@ -7,10 +7,12 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 ## Usage
 
 ```cli
+curl -sSL https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/generate.rb | ruby
+```
+
 rails new my_new_app \
   --database=postgresql \
-  -m https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/template.rb
-```
+  -m ./rails8-framework/template.rb
 
 ## Rails 8:
     - PostgreSQL
