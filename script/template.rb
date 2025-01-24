@@ -1,8 +1,8 @@
-app_name       = ENV['APP_NAME']
-use_api        = ENV['USE_API'] == 'true'
-use_scaffold   = ENV['USE_SCAFFOLD'] == 'true'
-scaffold_name  = ENV['SCAFFOLD_NAME']
-scaffold_fields = ENV['SCAFFOLD_FIELDS']
+app_name       = ENV['ST_APP_NAME']
+use_api        = ENV['ST_USE_API'] == 'true'
+use_scaffold   = ENV['ST_USE_SCAFFOLD'] == 'true'
+scaffold_name  = ENV['ST_SCAFFOLD_NAME']
+scaffold_fields = ENV['ST_SCAFFOLD_FIELDS']
 
 gem 'sqlite3'
 gem 'tailwindcss-rails', '~> 3.3'
@@ -42,7 +42,30 @@ after_bundle do
     rails_command "db:migrate"
   end
 
+  if ENV['ST_OPENAI_USE'] == true && ENV['ST_OPENAI_DATA'].present?
+    content = ENV['ST_OPENAI_DATA']
+    scaffold_commands = content['scaffolding']
+
+    puts "Running AI Scaffold Commands..."
+
+    scaffold_commands.split(';').each do |command|
+      command = command.strip
+
+      puts "\nExecuting: #{command}"
+      success = system("rails #{command}")
+
+      if success
+        puts "Successfully executed: #{command}"
+      else
+        puts "Failed to execute: #{command}"
+      end
+    end
+
+    # todo replace models
+    # add nav items
+  end
+
   git :init
   git add: '.'
-  git commit: %( -m "Initialized Rails 8 Framework by aFightClub.app" )
+  git commit: %( -m "Initialized SnailTrain.com" )
 end

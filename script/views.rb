@@ -90,7 +90,7 @@ create_file 'app/views/application/_header.html.erb', <<~ERB
   <header class="bg-black py-2 mb-3 text-white">
     <nav class="container mx-auto flex items-center justify-between py-4">
       <a href="/" class="text-2xl font-bold">
-        #{ENV['APP_NAME']}
+        #{ENV['ST_APP_NAME']}
       </a>
       <ul class="flex items-center space-x-4">
         <li><a href="/" class="hover:underline">Dashboard</a></li>
@@ -103,7 +103,7 @@ ERB
 create_file 'app/views/application/_footer.html.erb', <<~ERB
   <footer class="pt-3 pb-12 text-gray-600 text-sm">
     <nav class="container mx-auto flex items-center justify-between py-4">
-      <span>&copy; 2025 – <strong>#{ENV['APP_NAME']}</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline text-gray-500">aFightClub.app</a></span>
+      <span>&copy; 2025 – <strong>#{ENV['ST_APP_NAME']}</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline text-gray-500">aFightClub.app</a></span>
       <span><%= button_to "Logout", session_path, method: :delete if authenticated? %></span>
     </nav>
   </footer>
@@ -126,7 +126,7 @@ create_file 'app/views/layouts/application.html.erb', <<~ERB
   <!DOCTYPE html>
   <html>
     <head>
-      <%= display_meta_tags site: "#{ENV['APP_NAME']}" %>
+      <%= display_meta_tags site: "#{ENV['ST_APP_NAME']}" %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="mobile-web-app-capable" content="yes">
@@ -167,7 +167,7 @@ create_file 'app/views/layouts/auth.html.erb', <<~ERB
   <!DOCTYPE html>
   <html>
     <head>
-      <%= display_meta_tags site: "#{ENV['APP_NAME']}" %>
+      <%= display_meta_tags site: "#{ENV['ST_APP_NAME']}" %>
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="mobile-web-app-capable" content="yes">
@@ -189,7 +189,7 @@ create_file 'app/views/layouts/auth.html.erb', <<~ERB
       <header class="py-2 mt-12">
         <nav class="container auth mx-auto flex items-center justify-center py-4">
           <a href="/" class="text-5xl font-bold">
-            #{ENV['APP_NAME']}
+            #{ENV['ST_APP_NAME']}
           </a>
         </nav>
       </header>
@@ -200,7 +200,7 @@ create_file 'app/views/layouts/auth.html.erb', <<~ERB
 
       <footer class="pt-3 pb-12 text-sm">
         <nav class="container auth mx-auto flex items-center justify-center py-4">
-          <span>&copy; 2025 – <strong>#{ENV['APP_NAME']}</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline">aFightClub.app</a></span>
+          <span>&copy; 2025 – <strong>#{ENV['ST_APP_NAME']}</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline">aFightClub.app</a></span>
         </nav>
       </footer>
     </body>
