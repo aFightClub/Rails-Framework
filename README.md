@@ -45,13 +45,14 @@ It will setup the dashboard, authentication with an account view and registratio
 
 For a FightClub community for people who like to build stuff.
 
-### Requirements:
+### Requirements
 - Rails 8
 - Ruby
 - PostgreSQL
 - SQLite3 (for Solid Queue)
+- Git
 
-### Gem List:
+### Bundle
 - TailwindCSS
 - Rack-CORS
 - Ruby OpenAI
@@ -62,8 +63,8 @@ For a FightClub community for people who like to build stuff.
 - Meta Tags
 - Faker
 
-## Deployment:
+## Deployment
 - Kamal 2
 - Docker
 
-Made by aFightClub.app
+Thank you for checking this out. Made to make our MVP prototypes faster and easier to build.

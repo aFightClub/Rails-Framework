@@ -153,8 +153,10 @@ if use_scaffold
         print "\nUse AI recommendations? (y/n): "
         ai_use = $stdin.gets.strip
         should_use = (ai_use == 'y' || ai_use == 'yes')
+
         if should_use
           should_use = true
+          # todo save to config file the scaffolding and models
         end
       else
         puts "Error: #{response.code} - #{response.message}"

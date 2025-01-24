@@ -15,7 +15,7 @@ gem 'meta-tags'
 gem 'faker'
 
 after_bundle do
-  say "Setting up your new Rails app..."
+  say "Setting up your new Rails 8 app by SnailTrain.com..."
   rails_command 'tailwindcss:install'
   generate 'meta_tags:install'
   generate 'authentication'
@@ -63,9 +63,10 @@ after_bundle do
 
     # todo replace models
     # add nav items
+    # clean up config
   end
 
   git :init
   git add: '.'
-  git commit: %( -m "Initialized SnailTrain.com" )
+  git commit: %( -m "Initialized by SnailTrain.com" )
 end
