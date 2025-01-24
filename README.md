@@ -7,30 +7,30 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 ## Usage
 
 ```cli
-curl -sSL https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/generate.rb | ruby
+  curl -sSL https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/generate.rb | ruby
 ```
 
-rails new my_new_app \
-  --database=postgresql \
-  -m ./rails8-framework/template.rb
+Run in the terminal to generate a new Rails 8 application based on this framework.
 
-## Rails 8:
-    - PostgreSQL
-    - SQLite3 (for Solid Queue)
+### Requirements:
+- Rails 8
+- Ruby
+- PostgreSQL
+- SQLite3 (for Solid Queue)
 
-    ## Gem List:
-    - TailwindCSS
-    - Rack-CORS
-    - Ruby OpenAI
-    - Chartkick
-    - Groupdate
-    - Pagy
-    - SQLite3
-    - Meta Tags
-    - Faker
+### Gem List:
+- TailwindCSS
+- Rack-CORS
+- Ruby OpenAI
+- Chartkick
+- Groupdate
+- Pagy
+- SQLite3
+- Meta Tags
+- Faker
 
-    ## Deployment:
-    - Kamal 2
-    - Docker
+## Deployment:
+- Kamal 2
+- Docker
 
 Made by aFightClub.app
