@@ -18,10 +18,8 @@ print "Use AI powers? (y/n): "
 scaffold_answer = $stdin.gets.strip.downcase
 use_scaffold = (scaffold_answer == 'y' || scaffold_answer == 'yes')
 
-# TODO: set invite code
 print "Set Invite Code: "
-invite_answer = $stdin.gets.strip.downcase
-use_invite = (invite_answer == 'y' || invite_answer == 'yes')
+invite_code = $stdin.gets.strip.downcase
 
 def save_to_file(value, file)
   FileUtils.mkdir_p(File.dirname(file))
@@ -117,9 +115,9 @@ def run
             'navigation': ['posts']
           }
 
-          Scaffolding: The scaffold command to generate the models with user reference or other references.
+          Scaffolding: The scaffold command to generate the models with user reference or other references as requested.
 
-          Models: The model files and the code to be added to the model files. This must contain the entire code for the rails model file. (like belongs_to, has_many, etc.)
+          Models: The model files and the code to be added to the model files. This must contain the entire code for the rails model file. (like belongs_to, has_many, etc.) Never create a 'user' model as that already exists.
 
           Navigation: The navigation is a array of names for any paths that should be in the header navigation (for any scaffolds, etc)
 
@@ -158,6 +156,7 @@ def run
         print "\nUse AI build steps? (c = request changes) (y/c/n): "
         ai_use = $stdin.gets.strip
         should_use = (ai_use == 'y' || ai_use == 'yes')
+        ENV['ST_OPENAI_USE'] = should_use.to_s
         should_change = ai_use == 'c'
 
         if should_change
@@ -190,11 +189,11 @@ if use_scaffold
   run()
 end
 
-ENV['ST_OPENAI_USE']        = should_use.to_s
-ENV['ST_APP_NAME']          = raw_app_name
 
-TEMPLATE_FILE = File.join(__dir__, 'build.rb')
-template = TEMPLATE_FILE
+ENV['ST_APP_NAME'] = raw_app_name
+ENV['ST_INVITE_CODE'] = invite_code
+
+template = File.join(__dir__, 'build.rb')
 cmd = "rails new #{safe_app_name} -m #{template}"
 cmd << " --database=postgresql"
 

@@ -12,7 +12,7 @@ create_file 'app/controllers/registration_controller.rb', <<~RUBY
 
     def create
       @user = User.new(user_params)
-      unless params[:user][:invite_code] == "fightclub"
+      unless params[:user][:invite_code] == "#{ENV['ST_INVITE_CODE']}"
         redirect_to new_registration_path, alert: "Invalid invite code."
         return
       end

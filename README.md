@@ -1,3 +1,5 @@
+<img src="/images/cli.png" style="width: 300px">
+
 # SnailTrain.com
 > a Ruby on Rails 8 Framework Generator with AI super powers.
 
@@ -9,7 +11,7 @@ When you connect with OpenAI API key you can use model `gpt-4o-2024-08-06` to ge
 
 ## What makes us different?
 
-We start all apps without anything fancy (like Stripe, etc) and we have a built-in `Invite Code` which you can set in the generator. This allows you to build your MVP, invite your audience with invite code to start validating your app idea!
+We start all apps without anything fancy (like Stripe, etc) and we have a built-in `Invite Code` which you can set in the generator. This allows you to build your MVP, invite your audience with invite code to start validating your app idea! By default all scaffolds made with AI assume it will be associated with a user. By default the entire app is behind authentication.
 
 ## Requirements
 
