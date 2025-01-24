@@ -3,6 +3,8 @@
 # Snail Train
 > a Ruby on Rails 8 scaffolding generator with AI super powers.
 
+What Demo Video: https://www.youtube.com/watch?v=oBaaTdje1wI
+
 Use the CLI to generate a Ruby on Rails app with our framework that includes base UI screens, MVP invite code and you can add your OpenAI API key to enable the AI super powers.
 
 ## What are the super powers?

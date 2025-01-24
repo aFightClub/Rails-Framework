@@ -121,7 +121,7 @@ create_file 'app/views/layouts/application.html.erb', <<~ERB
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
 
-    <body class="bg-slate-100">
+    <body data-controller="notice" class="bg-slate-100">
       <%= render "header" %>
 
       <main class="container mx-auto card p-12">
