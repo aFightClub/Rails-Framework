@@ -1,6 +1,10 @@
 # Rails 8 Framework
+This is a simple Rails 8 framework that can be used to build a new Rails 8 application.
 
-This is a simple Rails 8 framework that can be used to build a new Rails 8 application. It includes the following gems:
+## Requirements
+Make sure you have PostgreSQL and Ruby installed on your machine.
+
+## Usage
 
 ```cli
 rails new my_new_app \
