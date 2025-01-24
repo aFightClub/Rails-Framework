@@ -1,0 +1,29 @@
+# Rails 8 Framework
+
+This is a simple Rails 8 framework that can be used to build a new Rails 8 application. It includes the following gems:
+
+```cli
+rails new my_new_app \
+  -m https://github.com/aFightClub/Rails-Framework/template.rb
+```
+
+## Rails 8:
+    - PostgreSQL
+    - SQLite3 (for Solid Queue)
+
+    ## Gem List:
+    - TailwindCSS
+    - Rack-CORS
+    - Ruby OpenAI
+    - Chartkick
+    - Groupdate
+    - Pagy
+    - SQLite3
+    - Meta Tags
+    - Faker
+
+    ## Deployment:
+    - Kamal 2
+    - Docker
+
+Made by aFightClub.app
