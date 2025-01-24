@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'io/console'
+require 'open-uri'
 
 print "Enter your app name (e.g. My Cool App): "
 raw_app_name = $stdin.gets.strip

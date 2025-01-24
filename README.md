@@ -6,8 +6,15 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 
 ## Usage
 
+Install with CLI:
+> (download the files and open terminal and cd into directory)
 ```cli
-  curl -sSL https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/generate.rb | ruby
+ ./generate.rb
+```
+
+Skip CLI:
+```cli
+ rails new your_app_name -m https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/template.rb
 ```
 
 Run in the terminal to generate a new Rails 8 application based on this framework.
