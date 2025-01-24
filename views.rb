@@ -200,7 +200,7 @@ create_file 'app/views/layouts/auth.html.erb', <<~ERB
 
       <footer class="pt-3 pb-12 text-sm">
         <nav class="container auth mx-auto flex items-center justify-center py-4">
-          <span>&copy; 2025 – <strong>App Name</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline">aFightClub.app</a></span>
+          <span>&copy; 2025 – <strong>#{ENV['APP_NAME']}</strong> – Powered by <a href="https://afightclub.app" target="_blank" class="underline">aFightClub.app</a></span>
         </nav>
       </footer>
     </body>

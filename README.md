@@ -12,7 +12,7 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
  ./generate.rb
 ```
 
-<img src="/cli.png" style="width: 400px">
+<img src="/cli.png" style="width: 600px">
 
 ### Skip CLI:
 ```cli
@@ -32,6 +32,8 @@ It will setup the dashboard, authentication with an account view and registratio
 - Signup
 - Password Reset
 - Account
+
+<img src="/login.png" style="width: 600px">
 
 ## Who is it for?
 
