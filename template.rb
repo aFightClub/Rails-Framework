@@ -1,5 +1,3 @@
-gsub_file 'Gemfile', /^gem ['"]sqlite3['"].*/, ''
-gem 'pg'
 gem 'sqlite3'
 gem 'tailwindcss-rails', '~> 3.3'
 gem 'rack-cors', require: 'rack/cors'

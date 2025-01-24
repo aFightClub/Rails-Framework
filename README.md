@@ -4,7 +4,8 @@ This is a simple Rails 8 framework that can be used to build a new Rails 8 appli
 
 ```cli
 rails new my_new_app \
-  -m https://github.com/aFightClub/Rails-Framework/template.rb
+  --database=postgresql \
+  -m https://raw.githubusercontent.com/aFightClub/Rails-Framework/refs/heads/main/template.rb
 ```
 
 ## Rails 8:
