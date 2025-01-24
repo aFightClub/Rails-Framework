@@ -5,7 +5,7 @@ Scaffold out your next SaaS application quickly. Use the CLI to generate a Ruby 
 
 ## What are the super powers?
 
-When you are running the CLI you can use plain text to generate new scaffoldings. For example, you can say "I want a new model called 'User' with a 'name' and 'email' field" and it will generate the model, controller, views, and migrations for you and edit the appropriate files.
+When you are running the CLI you can use plain text to generate new scaffoldings. For example, you can say "I want a new model called 'User' with a 'name' and 'email' field" and it will generate the model and migrations for you and edit the appropriate files for extra fast startup.
 
 ## Requirements
 Make sure you have PostgreSQL and Ruby installed on your machine.
@@ -43,7 +43,7 @@ It will setup the dashboard, authentication with an account view and registratio
 
 ## Who is it for?
 
-For a FightClub community for people who like to build stuff.
+This is made for small community of creators known as FightClub. We are a group of developers, designers, and entrepreneurs who are building MVPs and startups..
 
 ### Requirements
 - Rails 8
@@ -68,3 +68,7 @@ For a FightClub community for people who like to build stuff.
 - Docker
 
 Thank you for checking this out. Made to make our MVP prototypes faster and easier to build.
+
+## Looking for more power?
+
+We recommend BulletTrain for a more robust and scalable solution.

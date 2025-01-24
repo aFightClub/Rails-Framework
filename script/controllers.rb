@@ -38,8 +38,6 @@ RUBY
 
 create_file 'app/controllers/dashboard_controller.rb', <<~RUBY
   class DashboardController < ApplicationController
-  before_action :resume_session
-
     def index
       set_meta_tags(
         title: "Dashboard"
@@ -50,8 +48,6 @@ RUBY
 
 create_file 'app/controllers/account_controller.rb', <<~RUBY
   class AccountController < ApplicationController
-    before_action :resume_session
-
     def index
       set_meta_tags(
         title: "Account"
@@ -63,6 +59,7 @@ RUBY
 remove_file 'app/controllers/application_controller.rb'
 create_file 'app/controllers/application_controller.rb', <<~RUBY
   class ApplicationController < ActionController::Base
+    before_action :resume_session
     include Authentication
     include Pagy::Backend
     allow_browser versions: :modern
