@@ -19,22 +19,22 @@ Make sure you have PostgreSQL and Ruby installed on your machine.
 
 ## Usage
 
+### Step 1. Download the files
+
+Put the `snailtrain` folder in your parent directory (i.e. where you want to create your Rails app).
+
+### Step 2. Open terminal
+
+In the terminal `cd` into the parent folder that contains the folder for Snail Train.
+
 ### Install with Command Line Interface (CLI)
-> (download the files and open terminal and cd into directory)
 ```cli
- ./generate.rb
+  ./snailtrain/script/generate.rb
 ```
 
-<img src="/images/cli.png" style="width: 600px">
+<img src="/images/cli.png" style="width: 100%">
 
-### Skip CLI & use base framework:
-```cli
- rails new your_app_name \
-  -m https://raw.githubusercontent.com/aFightClub/SnailTrain/main/script/build.rb \
-  --database=postgresql
-```
-
-Run in the terminal to generate a new Rails 8 application based on this framework.
+Run in the terminal to generate a new Rails 8 application based on our framework.
 
 ## What is it, again?
 
@@ -46,7 +46,7 @@ It will setup the dashboard, authentication with an account view and registratio
 - Password Reset
 - Account
 
-<img src="/images/login.png" style="width: 600px">
+<img src="/images/ui.png" style="width: 100%">
 
 ## Who is it for?
 
