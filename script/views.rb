@@ -36,7 +36,7 @@ create_file 'app/views/registration/new.html.erb', <<~ERB
       </div>
 
       <div>
-        <button class="btn btn-primary">Create Account</button>
+        <button class="btn btn-primary w-full text-center block">Create Account</button>
       </div>
 
       <div>

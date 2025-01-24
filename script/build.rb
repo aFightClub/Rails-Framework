@@ -49,7 +49,7 @@ after_bundle do
 
     if File.exist?(form_path)
       content = File.read(form_path)
-      content.gsub!(%q{<div class="my-5">
+      content.gsub!(%Q{<div class="my-5">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": #{name.downcase}.errors[:user_id].none?, "border-red-400 focus:outline-red-600": #{name.downcase}.errors[:user_id].any?}] %>
   </div>}, '')
@@ -57,12 +57,12 @@ after_bundle do
     end
 
     if File.exist?(single_path)
-      content = File.read(form_path)
-      content.gsub!(%q{<p class="my-5">
+      content = File.read(single_path)
+      content.gsub!(%Q{<p class="my-5">
     <strong class="block font-medium mb-1">User:</strong>
-    <%= contact.user_id %>
+    <%= #{name.downcase}.user_id %>
   </p>}, '')
-      File.write(form_path, content)
+      File.write(single_path, content)
     end
   end
 

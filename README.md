@@ -1,7 +1,7 @@
 <img src="/images/logo.png" style="width: 170px">
 
-# SnailTrain.com
-> a Ruby on Rails 8 Framework Generator with AI super powers.
+# Snail Train
+> a Ruby on Rails 8 scaffolding generator with AI super powers.
 
 Use the CLI to generate a Ruby on Rails app with our framework that includes base UI screens, MVP invite code and you can add your OpenAI API key to enable the AI super powers.
 
