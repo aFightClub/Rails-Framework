@@ -14,7 +14,9 @@ Install with CLI:
 
 Skip CLI:
 ```cli
- rails new your_app_name -m https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/template.rb
+ rails new your_app_name \
+  -m https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/template.rb \
+  --database=postgresql
 ```
 
 Run in the terminal to generate a new Rails 8 application based on this framework.
