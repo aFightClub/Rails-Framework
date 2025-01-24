@@ -1,4 +1,4 @@
-<img src="/images/logo.png" style="width: 300px">
+<img src="/images/logo.png" style="width: 170px">
 
 # SnailTrain.com
 > a Ruby on Rails 8 Framework Generator with AI super powers.
