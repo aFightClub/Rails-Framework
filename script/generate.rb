@@ -31,7 +31,7 @@ ENV['USE_SCAFFOLD']      = use_scaffold.to_s
 ENV['SCAFFOLD_NAME']     = scaffold_name
 ENV['SCAFFOLD_FIELDS']   = scaffold_fields
 
-template = "https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/template.rb"
+template = "https://raw.githubusercontent.com/aFightClub/Rails-Framework/main/script/template.rb"
 cmd = "rails new #{safe_app_name} -m #{template}"
 cmd << " --api" if use_api
 cmd << " --database=postgresql"
