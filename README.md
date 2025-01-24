@@ -12,6 +12,8 @@ Install with CLI:
  ./generate.rb
 ```
 
+<img src="/cli.png" style="width: 400px">
+
 Skip CLI:
 ```cli
  rails new your_app_name \
